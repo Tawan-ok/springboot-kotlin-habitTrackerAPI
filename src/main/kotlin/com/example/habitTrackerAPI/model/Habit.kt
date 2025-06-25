@@ -13,8 +13,8 @@ data class Habit (
     @GeneratedValue(strategy = GenerationType.AUTO)
     var id: UUID? = null,
 
-    var title: String,
-    var description: String,
+    var title: String = "",
+    var description: String = "",
 
     val createdAt: LocalDateTime = LocalDateTime.now()
 )
