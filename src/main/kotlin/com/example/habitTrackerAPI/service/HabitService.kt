@@ -5,6 +5,7 @@ import com.example.habitTrackerAPI.model.HabitTracking
 import com.example.habitTrackerAPI.repository.HabitRepository
 import com.example.habitTrackerAPI.repository.HabitTrackingRepository
 import org.springframework.stereotype.Service
+import java.time.LocalDate
 import java.time.LocalDateTime
 import java.util.*
 
@@ -26,7 +27,7 @@ class HabitService (
             IllegalArgumentException("Habit not found")
         }
 
-        val existing  = trackingRepository.findByHabitAndDate(habit, LocalDateTime.now())
+        val existing  = trackingRepository.findByHabitAndDate(habit, LocalDate.now())
         if(existing != null) {
             return existing
         }
